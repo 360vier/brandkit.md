@@ -2,6 +2,10 @@
 
 This file defines layout and formatting rules for branded Markdown documents.
 
+## Default Style Profile
+
+If no profile is selected, use all sections in this file as the default style contract.
+
 ## Document Start
 
 Documents begin with a brand header, then the document title.
@@ -202,3 +206,38 @@ Example:
 ## Fixes
 ## Known Issues
 ```
+
+## Profile Overrides (Optional)
+
+Use profile overrides for subbrands or products while staying in a single-file setup.
+
+### Profile: acme-enterprise
+
+- Header pattern:
+
+```md
+◆ ACME Enterprise
+
+# Document Title
+```
+
+- Callout labels: NOTE, WARNING, DECISION
+
+### Profile: nebula
+
+- Header pattern:
+
+```md
+◆ Nebula
+
+# Document Title
+```
+
+- Preferred section order for product specs: Overview, User Value, Constraints, Implementation Notes, Rollout
+
+## Profile Resolution Rules
+
+- Start with `Default Style Profile`.
+- Apply selected profile overrides where explicitly defined.
+- Any missing style value falls back to default.
+- Profiles must keep portability, heading depth, and core Markdown compatibility unchanged.

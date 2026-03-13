@@ -123,55 +123,22 @@ Use these files at repository root:
 
 Any document generator or AI workflow can then consume both files before writing content.
 
-## V2 Structure (Subbrands and Products)
+## One-Setup Model (Simple by Default)
 
-For larger organizations, BrandKit can be layered to support master brand, subbrands, and product-level overrides while keeping Markdown portability.
+BrandKit stays lightweight by using a single setup with only two files:
 
-### Layer Model
+- `brand.md`
+- `styles.md`
 
-1. `core` defines global defaults (token policy, voice baseline, patterns).
-2. `subbrand` inherits core and can override approved fields.
-3. `product` inherits subbrand and can override approved fields.
-4. `document` follows the resolved ruleset at generation time.
+Subbrands and products are handled as optional profiles inside these files instead of additional folder hierarchies.
 
-### Suggested Repository Layout
+### Profile Resolution
 
-```text
-v2/
-  brand.core.md
-  styles.core.md
-  voice.md
-  patterns.md
-  governance.md
-  brands/
-    acme-enterprise/
-      brand.md
-      styles.md
-      products/
-        nebula/
-          brand.md
-          styles.md
-```
+1. Use `default` rules.
+2. If a profile is selected, apply only explicit profile overrides.
+3. For missing values, fall back to `default`.
 
-### Inheritance and Override Policy
-
-- Always inherit from `core` first, then subbrand, then product.
-- Allow only explicit overrides (`Allowed Overrides` sections in each file).
-- Keep portable semantics stable: token fallback, heading limits, callout syntax.
-- Never require renderer-specific features for core meaning.
-
-### Agent Resolution Order
-
-Before writing a product document, an AI agent should resolve files in this order:
-
-1. `v2/brand.core.md`
-2. `v2/styles.core.md`
-3. `v2/voice.md`
-4. `v2/patterns.md`
-5. matching subbrand `brand.md` and `styles.md`
-6. matching product `brand.md` and `styles.md`
-
-If conflicting rules appear, the nearest layer wins only when that field is explicitly overridable.
+This keeps the system portable, easy to copy, and easy for agents to resolve.
 
 ## Non-Goals (MVP)
 

@@ -2,6 +2,10 @@
 
 This file defines the portable brand identity for Markdown documents.
 
+## Default Profile
+
+If no profile is selected, use all values from this file as default brand rules.
+
 ## Brand Token
 
 Use exactly one symbol that can appear in plain text and Markdown.
@@ -77,3 +81,25 @@ If emoji rendering is unavailable, inconsistent, or visually noisy, use the bran
 - The brand token should be used in document headers when possible.
 - Keep token and wordmark stable across all project documents.
 - If emoji are used, keep them consistent with the allowed emoji set and fallback rules.
+
+## Profiles (Optional)
+
+Use profiles to represent subbrands or products while keeping a single-file setup.
+
+### Profile: acme-enterprise
+
+- Wordmark: ACME Enterprise
+- Primary Emoji: 💼
+- Accent: slate
+
+### Profile: nebula
+
+- Wordmark: Nebula by ACME Enterprise
+- Primary Emoji: 🚀
+- Accent: indigo
+
+## Profile Rules
+
+- Profiles may override only fields listed in their section.
+- Any missing field inherits from `Default Profile`.
+- Profiles must not override fallback and portability rules.
