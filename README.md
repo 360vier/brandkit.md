@@ -27,6 +27,28 @@ The project focuses on a pragmatic standard approach:
 - **Spec version:** `0.1.0-draft`
 - **Maturity:** Early, but intentionally structured and normative
 
+## Try in 60 seconds
+
+```bash
+cp templates/blank.brandkit.md brandkit.md
+```
+
+Then fill the required sections in order:
+
+1. `# brand overview`
+2. `## mission and positioning`
+3. `## audience`
+4. `## voice and tone`
+5. `## messaging`
+6. `## brand expressions`
+7. `## do and dont`
+8. `## usage notes for ai systems`
+
+For validation, use:
+
+- `SPEC.md`
+- `schema/brandkit-v0.1-fields.md`
+
 ## Quick start
 
 1. Read the normative specification in `SPEC.md`.
