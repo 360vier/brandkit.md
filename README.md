@@ -9,6 +9,43 @@ The project focuses on a pragmatic standard approach:
 - parser- and validator-friendly over time,
 - easy to version in Git.
 
+## Brand rendering showcase
+
+```txt
+Plain text header
+HELION SYSTEMS
+```
+
+```txt
+Terminal rendering
+|-| E L I O N
+```
+
+```txt
+Emoji + fallback
+✅ [HELION]
+```
+
+```txt
+CLI prompt style
+helion-secure>
+```
+
+```md
+## brand expressions
+- fallback_wordmark: HELION SYSTEMS
+- plain_text_signature: [HELION]
+- ascii_mark: |
+    |-| E L I O N
+- emoji_signature:
+    value: "✅"
+    fallback: "[HELION]"
+- cli_prompt_style:
+    value: "helion-secure>"
+```
+
+See full profiles in `EXAMPLES/enterprise.brandkit.md` and `EXAMPLES/personal-brand.brandkit.md`.
+
 ## What `brandkit.md` is
 
 - A convention plus formal specification (`v0.x`) for AI-readable brand context.
