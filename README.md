@@ -1,150 +1,63 @@
-# BrandKit.md
+# brandkit.md
 
-BrandKit.md is a lightweight, portable concept for adding brand identity to Markdown documents without breaking Markdown compatibility.
+`brandkit.md` is an open, Markdown-native specification in progress for expressing brand context consistently for humans, LLMs, and agents.
 
-Markdown is the default format for documentation, knowledge bases, and AI-generated content, but it has no native brand layer. BrandKit.md fills that gap with two plain Markdown files:
+The project focuses on a pragmatic standard approach:
 
-- `brand.md`
-- `styles.md`
+- human-readable in raw text,
+- AI-readable with explicit structure,
+- parser- and validator-friendly over time,
+- easy to version in Git.
 
-Together, these files define a project's BrandKit.
+## What `brandkit.md` is
 
-## Why BrandKit.md
+- A convention plus formal specification (`v0.x`) for AI-readable brand context.
+- A single-file format (`brandkit.md`) with a defined minimum structure.
+- A foundation for future tooling (validators, generators, linters).
 
-BrandKit.md enables:
+## What `brandkit.md` is not
 
-- consistent, branded Markdown generation by AI agents
-- reusable brand rules across repositories and tools
-- renderer enhancements without changing source Markdown
-- full readability in plain Markdown environments
+- Not a new Markdown dialect.
+- Not a replacement for complete brand guidelines or a design system.
+- Not a claim of an already mature tooling ecosystem.
 
-## Design Principles
+## Project status
 
-- **Portable first:** documents stay valid in any Markdown viewer
-- **Simple artifacts:** no custom format; only Markdown files
-- **Renderer optionality:** enhanced rendering is additive, not required
-- **Agent-friendly:** rules are explicit and machine-readable as text
+- **Status:** Standard-in-progress
+- **Spec version:** `0.1.0-draft`
+- **Maturity:** Early, but intentionally structured and normative
 
-## Core Files
+## Quick start
 
-### `brand.md`
+1. Read the normative specification in `SPEC.md`.
+2. Start from one profile in `EXAMPLES/`.
+3. Create your own `brandkit.md` using the required sections.
+4. Check consistency against `schema/brandkit-v0.1-fields.md`.
+5. Use a blank starter file from `templates/`.
 
-Defines brand identity primitives for portable and styled rendering.
+## Repository structure
 
-Typical sections:
+- `SPEC.md` - normative rules (`MUST`, `SHOULD`, `MAY`)
+- `EXAMPLES/` - reference profiles
+- `docs/principles.md` - design principles and trade-offs
+- `docs/faq.md` - common questions and non-goals
+- `docs/comparison.md` - boundaries against adjacent artifacts
+- `docs/roadmap.md` - v0.x to v2 path
+- `docs/migration.md` - migration from the legacy two-file model
+- `schema/brandkit-v0.1-fields.md` - parser-oriented field mapping
+- `templates/blank.brandkit.md` - blank starter without frontmatter
+- `templates/blank.brandkit.frontmatter.md` - blank starter with frontmatter
+- `templates/README.md` - 30-second copy/paste quick start
+- `CONTRIBUTING.md` - contribution process
+- `CHANGELOG.md` - tracked changes
 
-- Brand token (single symbol for portable Markdown)
-- Optional emoji elements (Unicode-first with fallback token)
-- Wordmark
-- Pixel mark (terminal-style logo)
-- Optional SVG mark guidance
-- Optional color system
+## Legacy note
 
-The brand token and pixel mark are the guaranteed portable fallback. Emoji can be used as additional portable accents when defined with clear fallback rules.
+The earlier files `brand.md` and `styles.md` remain as legacy references but are no longer the canonical model. The normative source is `SPEC.md`.
 
-### `styles.md`
+## Writing convention
 
-Defines document layout and formatting rules for authored and generated Markdown.
-
-Typical sections:
-
-- Document start pattern (brand header + title flow)
-- Heading hierarchy and maximum depth
-- Divider usage
-- Callout pattern
-- Table conventions
-- Spacing rules
-- Emoji usage policy
-- Reusable style patterns (metadata, links, lists, code blocks, media, templates)
-
-## Rendering Modes
-
-BrandKit.md supports two compatible modes.
-
-### Portable mode (required baseline)
-
-- Pure Markdown only
-- Works in any viewer
-- Uses token, text, and standard Markdown syntax
-- Supports Unicode emoji characters as optional text elements
-
-Example:
-
-```md
-◆ ACME
-
-# Strategy Memo
-```
-
-### Styled mode (optional enhancement)
-
-- Compatible renderer may apply layout, typography, and color
-- May use SVG mark and richer visual styling
-- Source Markdown remains unchanged and portable
-
-## Style Patterns
-
-Beyond core structure rules, BrandKit can define reusable style patterns in `styles.md` for:
-
-- metadata conventions
-- links and references
-- list patterns
-- code block formatting
-- media and caption usage
-- naming and terminology consistency
-- template skeletons (memo, guide, release notes)
-
-These patterns make cross-document output more consistent for both humans and AI agents.
-
-## Agent Integration
-
-Before generating project Markdown, an AI agent should:
-
-1. Read `brand.md`
-2. Read `styles.md`
-3. Apply brand token, structure, and formatting rules
-4. Keep output valid, portable Markdown
-
-### Agent Output Contract
-
-- Follow heading limits and structure from `styles.md`
-- Use the brand token and header pattern from `brand.md` and `styles.md`
-- If emoji are enabled, use only the allowed emoji set from `brand.md`
-- Prefer literal Unicode emoji and apply fallback token behavior when needed
-- Use only standard Markdown syntax for core document meaning
-- Treat styled rendering as optional presentation
-
-## Minimal Starter Files
-
-Use these files at repository root:
-
-- `brand.md` for identity primitives
-- `styles.md` for document style rules
-
-Any document generator or AI workflow can then consume both files before writing content.
-
-## One-Setup Model (Simple by Default)
-
-BrandKit stays lightweight by using a single setup with only two files:
-
-- `brand.md`
-- `styles.md`
-
-Subbrands and products are handled as optional profiles inside these files instead of additional folder hierarchies.
-
-### Profile Resolution
-
-1. Use `default` rules.
-2. If a profile is selected, apply only explicit profile overrides.
-3. For missing values, fall back to `default`.
-
-This keeps the system portable, easy to copy, and easy for agents to resolve.
-
-## Non-Goals (MVP)
-
-- Defining a new Markdown dialect
-- Requiring custom parsers for basic usage
-- Forcing visual rendering features on non-compatible viewers
+Standardized section names in `brandkit.md` use lowercase to simplify parsing and consistency.
 
 ## License
 
