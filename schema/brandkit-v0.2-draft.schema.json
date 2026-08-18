@@ -1,0 +1,820 @@
+{
+  "$id": "https://brandkit.md/schema/brandkit-v0.2-draft.schema.json",
+  "title": "Brandkit Core v0.2 (Working Draft)",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "brandId": {
+          "type": "string"
+        },
+        "organizationId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "review",
+            "approved",
+            "archived"
+          ]
+        },
+        "defaultLocale": {
+          "type": "string"
+        },
+        "supportedLocales": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "effectiveFrom": {
+          "type": "string"
+        },
+        "reviewDueAt": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "approvedBy": {
+          "type": "string"
+        },
+        "supersedesVersion": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "brandId",
+        "organizationId",
+        "name",
+        "version",
+        "status",
+        "defaultLocale",
+        "supportedLocales",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "mission": {
+          "type": "string"
+        },
+        "vision": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "description"
+            ]
+          }
+        },
+        "story": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "mission",
+        "values"
+      ]
+    },
+    "positioning": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "differentiators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proofPoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "competitiveContext": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement",
+        "differentiators",
+        "proofPoints"
+      ]
+    },
+    "audiences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "needs": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "painPoints": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "toneAdjustments": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description"
+        ]
+      }
+    },
+    "messaging": {
+      "type": "object",
+      "properties": {
+        "coreMessage": {
+          "type": "string"
+        },
+        "elevatorPitch": {
+          "type": "string"
+        },
+        "keyMessages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "audienceIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "proofPoints": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "message"
+            ]
+          }
+        },
+        "boilerplates": {
+          "type": "object",
+          "properties": {
+            "short": {
+              "type": "string"
+            },
+            "medium": {
+              "type": "string"
+            },
+            "long": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "coreMessage",
+        "keyMessages"
+      ]
+    },
+    "voice": {
+      "type": "object",
+      "properties": {
+        "toneAttributes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "principles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "do": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "dont": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "name",
+              "description"
+            ]
+          }
+        },
+        "vocabulary": {
+          "type": "object",
+          "properties": {
+            "preferred": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "avoid": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "toneAttributes",
+        "principles"
+      ]
+    },
+    "visualLanguage": {
+      "type": "object",
+      "properties": {
+        "logo": {
+          "type": "object",
+          "properties": {
+            "usage": {
+              "type": "string"
+            },
+            "clearspace": {
+              "type": "string"
+            },
+            "minSize": {
+              "type": "string"
+            },
+            "misuse": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "usage"
+          ]
+        },
+        "colorPrinciples": {
+          "type": "string"
+        },
+        "typographyPrinciples": {
+          "type": "string"
+        },
+        "layoutPrinciples": {
+          "type": "string"
+        },
+        "iconographyStyle": {
+          "type": "string"
+        },
+        "designTokenSetRef": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "logo"
+      ]
+    },
+    "imagery": {
+      "type": "object",
+      "properties": {
+        "style": {
+          "type": "string"
+        },
+        "subjects": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "moods": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "composition": {
+          "type": "string"
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "colorGrading": {
+          "type": "string"
+        },
+        "avoid": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "referenceAssetIds": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "style"
+      ]
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "shortDescription": {
+            "type": "string"
+          },
+          "approvedClaims": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "forbiddenClaims": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "safetyNotes": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assetIds": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "markets": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "certifications": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "norm": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "verified": {
+                  "default": false,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "norm"
+              ]
+            }
+          },
+          "isPlaceholder": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "shortDescription"
+        ]
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "restricted",
+              "forbidden"
+            ]
+          },
+          "conditions": {
+            "type": "string"
+          },
+          "markets": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "status"
+        ]
+      }
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "visual",
+              "voice",
+              "messaging",
+              "product",
+              "safety",
+              "legal",
+              "channel",
+              "ai"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "info",
+              "warning",
+              "error",
+              "critical"
+            ]
+          },
+          "scopes": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "global",
+                    "channel",
+                    "market",
+                    "product",
+                    "audience"
+                  ]
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "evaluationMethod": {
+            "type": "string",
+            "enum": [
+              "human",
+              "deterministic",
+              "language-model",
+              "multimodal-model",
+              "hybrid"
+            ]
+          },
+          "humanReviewRequired": {
+            "type": "boolean"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "description",
+          "category",
+          "severity",
+          "evaluationMethod",
+          "humanReviewRequired",
+          "enabled"
+        ]
+      }
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "formatNotes": {
+            "type": "string"
+          },
+          "toneAdjustments": {
+            "type": "string"
+          },
+          "constraints": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "markets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "locales": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "legalNotes": {
+            "type": "string"
+          },
+          "culturalNotes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "aiInstructions": {
+      "type": "object",
+      "properties": {
+        "systemGuidelines": {
+          "type": "string"
+        },
+        "allowedContexts": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "restrictedContexts": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fallbackBehavior": {
+          "type": "string"
+        },
+        "imageGenerationRules": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "textGenerationRules": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "systemGuidelines",
+        "fallbackBehavior"
+      ]
+    },
+    "governance": {
+      "type": "object",
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "reviewCycle": {
+          "type": "string"
+        },
+        "approvalPolicy": {
+          "type": "string"
+        },
+        "changePolicy": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "owner"
+      ]
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "guideline",
+              "document",
+              "url",
+              "asset"
+            ]
+          },
+          "url": {
+            "type": "string"
+          },
+          "assetId": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "type"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "metadata",
+    "identity",
+    "positioning",
+    "audiences",
+    "messaging",
+    "voice",
+    "visualLanguage",
+    "imagery",
+    "products",
+    "claims",
+    "policies",
+    "channels",
+    "markets",
+    "aiInstructions",
+    "governance",
+    "references"
+  ]
+}

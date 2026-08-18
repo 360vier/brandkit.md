@@ -1,0 +1,64 @@
+{
+  "$schema": "https://brandkit.md/schema/brandkit-v0.2-draft.schema.json",
+  "$comment": "Smallest document that satisfies Brandkit Core v0.2. Every required field is present, every optional field is absent, and the collection sections are present but empty. Use this to check a validator, not as a starting point for authoring — for that, copy templates/brandkit-template.json.",
+  "schemaVersion": "0.2.0-draft",
+  "metadata": {
+    "brandId": "example",
+    "organizationId": "example-org",
+    "name": "Example",
+    "version": "1.0.0",
+    "status": "draft",
+    "defaultLocale": "en-US",
+    "supportedLocales": ["en-US"],
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-14T00:00:00.000Z"
+  },
+  "identity": {
+    "mission": "State the mission in one sentence.",
+    "values": []
+  },
+  "positioning": {
+    "statement": "State who this is for and what it does better.",
+    "differentiators": [],
+    "proofPoints": []
+  },
+  "audiences": [],
+  "messaging": {
+    "coreMessage": "The one sentence every artefact should leave behind.",
+    "keyMessages": []
+  },
+  "voice": {
+    "toneAttributes": ["plain", "direct"],
+    "principles": []
+  },
+  "visualLanguage": {
+    "logo": {
+      "usage": "Place the mark from an original file. Do not redraw it.",
+      "misuse": []
+    }
+  },
+  "imagery": {
+    "style": "Describe the photographic or illustrative style in one sentence.",
+    "subjects": [],
+    "moods": [],
+    "avoid": [],
+    "referenceAssetIds": []
+  },
+  "products": [],
+  "claims": [],
+  "policies": [],
+  "channels": [],
+  "markets": [],
+  "aiInstructions": {
+    "systemGuidelines": "Write as this brand. Use only facts contained in this brandkit.",
+    "allowedContexts": [],
+    "restrictedContexts": [],
+    "fallbackBehavior": "If the brandkit does not cover the case, produce the most conservative version and route it to human review.",
+    "imageGenerationRules": [],
+    "textGenerationRules": []
+  },
+  "governance": {
+    "owner": "Unassigned"
+  },
+  "references": []
+}

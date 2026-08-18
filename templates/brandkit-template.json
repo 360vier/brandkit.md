@@ -1,0 +1,262 @@
+{
+  "$schema": "https://brandkit.md/schema/brandkit-v0.2-draft.schema.json",
+  "$comment": "Working template for a Brandkit Core document. Replace the <placeholders>, delete optional fields you cannot fill honestly, and extend the arrays as needed. designTokens is deliberately null: this template describes the brand, not its values. To ship values alongside it, put a DTCG token set here in the export shape ({ \"version\": 1, \"tokens\": { … } }) — leaving placeholder values in place would let a worthless version displace real CD values on import. See templates/tokens-template.json and SPEC.md §10.1.",
+  "schemaVersion": "0.2.0-draft",
+  "metadata": {
+    "brandId": "<brand-slug>",
+    "organizationId": "<organisation>",
+    "name": "<Markenname>",
+    "version": "1.0.0",
+    "status": "draft",
+    "defaultLocale": "de-DE",
+    "supportedLocales": [
+      "de-DE",
+      "en-US"
+    ],
+    "createdAt": "1970-01-01T00:00:00.000Z",
+    "updatedAt": "1970-01-01T00:00:00.000Z",
+    "effectiveFrom": "<effectiveFrom>",
+    "reviewDueAt": "<reviewDueAt>",
+    "owner": "<owner>",
+    "approvedBy": "<approvedBy>",
+    "supersedesVersion": "<supersedesVersion>"
+  },
+  "identity": {
+    "mission": "<mission>",
+    "vision": "<vision>",
+    "purpose": "<purpose>",
+    "values": [
+      {
+        "name": "<name>",
+        "description": "<description>"
+      }
+    ],
+    "story": "<story>",
+    "tagline": "<tagline>"
+  },
+  "positioning": {
+    "statement": "<statement>",
+    "category": "<category>",
+    "differentiators": [
+      "<differentiators>"
+    ],
+    "proofPoints": [
+      "<proofPoints>"
+    ],
+    "competitiveContext": "<competitiveContext>"
+  },
+  "audiences": [
+    {
+      "id": "<id>",
+      "name": "<name>",
+      "description": "<description>",
+      "needs": [
+        "<needs>"
+      ],
+      "painPoints": [
+        "<painPoints>"
+      ],
+      "toneAdjustments": "<toneAdjustments>"
+    }
+  ],
+  "messaging": {
+    "coreMessage": "<coreMessage>",
+    "elevatorPitch": "<elevatorPitch>",
+    "keyMessages": [
+      {
+        "id": "<id>",
+        "message": "<message>",
+        "audienceIds": [
+          "<audienceIds>"
+        ],
+        "proofPoints": [
+          "<proofPoints>"
+        ]
+      }
+    ],
+    "boilerplates": {
+      "short": "<short>",
+      "medium": "<medium>",
+      "long": "<long>"
+    }
+  },
+  "voice": {
+    "toneAttributes": [
+      "<toneAttributes>"
+    ],
+    "principles": [
+      {
+        "name": "<name>",
+        "description": "<description>",
+        "do": [
+          "<do>"
+        ],
+        "dont": [
+          "<dont>"
+        ]
+      }
+    ],
+    "vocabulary": {
+      "preferred": [
+        "<preferred>"
+      ],
+      "avoid": [
+        "<avoid>"
+      ]
+    }
+  },
+  "visualLanguage": {
+    "logo": {
+      "usage": "<usage>",
+      "clearspace": "<clearspace>",
+      "minSize": "<minSize>",
+      "misuse": [
+        "<misuse>"
+      ]
+    },
+    "colorPrinciples": "<colorPrinciples>",
+    "typographyPrinciples": "<typographyPrinciples>",
+    "layoutPrinciples": "<layoutPrinciples>",
+    "iconographyStyle": "<iconographyStyle>",
+    "designTokenSetRef": "<designTokenSetRef>"
+  },
+  "imagery": {
+    "style": "<style>",
+    "subjects": [
+      "<subjects>"
+    ],
+    "moods": [
+      "<moods>"
+    ],
+    "composition": "<composition>",
+    "lighting": "<lighting>",
+    "colorGrading": "<colorGrading>",
+    "avoid": [
+      "<avoid>"
+    ],
+    "referenceAssetIds": [
+      "<referenceAssetIds>"
+    ]
+  },
+  "products": [
+    {
+      "id": "<id>",
+      "name": "<name>",
+      "slug": "<slug>",
+      "shortDescription": "<shortDescription>",
+      "approvedClaims": [
+        "<approvedClaims>"
+      ],
+      "forbiddenClaims": [
+        "<forbiddenClaims>"
+      ],
+      "safetyNotes": [
+        "<safetyNotes>"
+      ],
+      "assetIds": [
+        "<assetIds>"
+      ],
+      "markets": [
+        "<markets>"
+      ],
+      "languages": [
+        "<languages>"
+      ],
+      "certifications": [
+        {
+          "norm": "<norm>",
+          "scope": "<scope>",
+          "source": "<source>",
+          "verified": false
+        }
+      ],
+      "isPlaceholder": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "<id>",
+      "text": "<text>",
+      "status": "approved",
+      "conditions": "<conditions>",
+      "markets": [
+        "<markets>"
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "<id>",
+      "title": "<title>",
+      "description": "<description>",
+      "category": "visual",
+      "severity": "info",
+      "scopes": [
+        {
+          "type": "global",
+          "value": "<value>"
+        }
+      ],
+      "evaluationMethod": "human",
+      "humanReviewRequired": false,
+      "enabled": false
+    }
+  ],
+  "channels": [
+    {
+      "id": "<id>",
+      "name": "<name>",
+      "type": "<type>",
+      "formatNotes": "<formatNotes>",
+      "toneAdjustments": "<toneAdjustments>",
+      "constraints": [
+        "<constraints>"
+      ]
+    }
+  ],
+  "markets": [
+    {
+      "id": "<id>",
+      "name": "<name>",
+      "locales": [
+        "<locales>"
+      ],
+      "legalNotes": "<legalNotes>",
+      "culturalNotes": "<culturalNotes>"
+    }
+  ],
+  "aiInstructions": {
+    "systemGuidelines": "<systemGuidelines>",
+    "allowedContexts": [
+      "<allowedContexts>"
+    ],
+    "restrictedContexts": [
+      "<restrictedContexts>"
+    ],
+    "fallbackBehavior": "<fallbackBehavior>",
+    "imageGenerationRules": [
+      "<imageGenerationRules>"
+    ],
+    "textGenerationRules": [
+      "<textGenerationRules>"
+    ]
+  },
+  "governance": {
+    "owner": "<owner>",
+    "reviewCycle": "<reviewCycle>",
+    "approvalPolicy": "<approvalPolicy>",
+    "changePolicy": "<changePolicy>",
+    "contact": "<contact>"
+  },
+  "references": [
+    {
+      "id": "<id>",
+      "title": "<title>",
+      "type": "guideline",
+      "url": "<url>",
+      "assetId": "<assetId>",
+      "description": "<description>"
+    }
+  ],
+  "designTokens": null
+}

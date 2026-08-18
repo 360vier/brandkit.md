@@ -1,0 +1,417 @@
+{
+  "$description": "HELION SYSTEMS design tokens — DTCG (W3C Design Tokens) with the md.brandkit extension profile. Fictional brand, illustrative values. Segment-dependent values live in $extensions[\"md.brandkit\"].segments; $value carries the first segment value as a standard-conformant fallback.",
+  "$extensions": {
+    "md.brandkit": {
+      "segments": [
+        { "id": "core", "label": "Core Platform" },
+        { "id": "labs", "label": "Labs (Early Access)" }
+      ],
+      "tags": ["screen", "print", "composition"]
+    }
+  },
+  "color": {
+    "brand": {
+      "primary": {
+        "$type": "color",
+        "$value": "#101B2D",
+        "$description": "Carries the page. Large surfaces, inverse sections, wordmark on light ground.",
+        "$extensions": {
+          "md.brandkit": {
+            "order": 0,
+            "group": "brand",
+            "inputType": "color",
+            "tags": ["screen", "print", "composition"]
+          }
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "#1F9E8C",
+        "$description": "One action or state per view. Segment-dependent: Labs material is visually distinguishable from the core platform.",
+        "$extensions": {
+          "md.brandkit": {
+            "order": 1,
+            "group": "brand",
+            "inputType": "color",
+            "tags": ["screen", "composition"],
+            "segments": {
+              "core": "#1F9E8C",
+              "labs": "#C2571E"
+            }
+          }
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": "#0A1220",
+        "$description": "Body copy on light surfaces.",
+        "$extensions": {
+          "md.brandkit": {
+            "order": 2,
+            "group": "brand",
+            "inputType": "color",
+            "tags": ["screen", "print"]
+          }
+        }
+      }
+    },
+    "neutral": {
+      "0": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$extensions": {
+          "md.brandkit": { "order": 3, "group": "neutral", "inputType": "color" }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#F4F6F8",
+        "$extensions": {
+          "md.brandkit": { "order": 4, "group": "neutral", "inputType": "color" }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#D5DBE2",
+        "$extensions": {
+          "md.brandkit": { "order": 5, "group": "neutral", "inputType": "color" }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#6B7784",
+        "$extensions": {
+          "md.brandkit": { "order": 6, "group": "neutral", "inputType": "color" }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#3A4550",
+        "$extensions": {
+          "md.brandkit": { "order": 7, "group": "neutral", "inputType": "color" }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#18212E",
+        "$extensions": {
+          "md.brandkit": { "order": 8, "group": "neutral", "inputType": "color" }
+        }
+      }
+    },
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "{color.neutral.0}",
+        "$description": "Reference, not a duplicate value — the page ground follows the neutral ramp.",
+        "$extensions": {
+          "md.brandkit": { "order": 9, "group": "surface", "inputType": "color" }
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{color.neutral.100}",
+        "$extensions": {
+          "md.brandkit": { "order": 10, "group": "surface", "inputType": "color" }
+        }
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{color.brand.primary}",
+        "$extensions": {
+          "md.brandkit": { "order": 11, "group": "surface", "inputType": "color" }
+        }
+      }
+    },
+    "state": {
+      "warning": {
+        "$type": "color",
+        "$value": "#B7791F",
+        "$description": "Reserved for warnings. Never used decoratively — a warning colour must keep its meaning.",
+        "$extensions": {
+          "md.brandkit": { "order": 12, "group": "state", "inputType": "color" }
+        }
+      },
+      "danger": {
+        "$type": "color",
+        "$value": "#A32B2B",
+        "$extensions": {
+          "md.brandkit": { "order": 13, "group": "state", "inputType": "color" }
+        }
+      }
+    },
+    "area": {
+      "post": {
+        "$type": "color",
+        "$value": "{color.brand.primary}",
+        "$description": "Colour area behind composed headlines. Consumed by the deterministic composition layer, not by prose.",
+        "$extensions": {
+          "md.brandkit": {
+            "order": 14,
+            "group": "area",
+            "inputType": "color",
+            "tags": ["composition"],
+            "segments": {
+              "core": "{color.brand.primary}",
+              "labs": "{color.neutral.900}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": {
+        "$type": "fontFamily",
+        "$value": ["Inter Tight", "Helvetica Neue", "sans-serif"],
+        "$description": "First entry is the brand typeface. A static cut must exist for the composition layer.",
+        "$extensions": {
+          "md.brandkit": { "order": 15, "group": "fontFamily", "inputType": "font" }
+        }
+      },
+      "body": {
+        "$type": "fontFamily",
+        "$value": ["Inter Tight", "Helvetica Neue", "sans-serif"],
+        "$extensions": {
+          "md.brandkit": { "order": 16, "group": "fontFamily", "inputType": "font" }
+        }
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": ["JetBrains Mono", "ui-monospace", "monospace"],
+        "$description": "Configuration, evidence records, CLI output.",
+        "$extensions": {
+          "md.brandkit": { "order": 17, "group": "fontFamily", "inputType": "font" }
+        }
+      }
+    },
+    "fontSize": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "14px",
+        "$extensions": {
+          "md.brandkit": { "order": 18, "group": "fontSize", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": "17px",
+        "$extensions": {
+          "md.brandkit": { "order": 19, "group": "fontSize", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "21px",
+        "$extensions": {
+          "md.brandkit": { "order": 20, "group": "fontSize", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "32px",
+        "$extensions": {
+          "md.brandkit": { "order": 21, "group": "fontSize", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "display": {
+        "$type": "dimension",
+        "$value": "56px",
+        "$description": "Segment-dependent: Labs headlines run one step smaller to keep early-access material calmer.",
+        "$extensions": {
+          "md.brandkit": {
+            "order": 22,
+            "group": "fontSize",
+            "inputType": "dim",
+            "unit": "px",
+            "segments": { "core": "56px", "labs": "44px" }
+          }
+        }
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "$type": "fontWeight",
+        "$value": 400,
+        "$extensions": {
+          "md.brandkit": { "order": 23, "group": "fontWeight", "inputType": "weight" }
+        }
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": 600,
+        "$description": "Headline weight. The composition layer loads exactly this cut of the heading family.",
+        "$extensions": {
+          "md.brandkit": { "order": 24, "group": "fontWeight", "inputType": "weight" }
+        }
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "$type": "number",
+        "$value": 1.1,
+        "$description": "Headlines.",
+        "$extensions": {
+          "md.brandkit": { "order": 25, "group": "lineHeight", "inputType": "ratio" }
+        }
+      },
+      "body": {
+        "$type": "number",
+        "$value": 1.6,
+        "$extensions": {
+          "md.brandkit": { "order": 26, "group": "lineHeight", "inputType": "ratio" }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$extensions": {
+        "md.brandkit": { "order": 27, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$extensions": {
+        "md.brandkit": { "order": 28, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "md.brandkit": { "order": 29, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$extensions": {
+        "md.brandkit": { "order": 30, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "64px",
+      "$extensions": {
+        "md.brandkit": { "order": 31, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    },
+    "section": {
+      "$type": "dimension",
+      "$value": "96px",
+      "$description": "Vertical rhythm between page sections.",
+      "$extensions": {
+        "md.brandkit": { "order": 32, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    }
+  },
+  "size": {
+    "container": {
+      "max": {
+        "$type": "dimension",
+        "$value": "1200px",
+        "$extensions": {
+          "md.brandkit": { "order": 33, "group": "container", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "measure": {
+        "$type": "dimension",
+        "$value": "68ch",
+        "$description": "Reading measure, 60–75 characters.",
+        "$extensions": {
+          "md.brandkit": { "order": 34, "group": "container", "inputType": "dim", "unit": "ch" }
+        }
+      }
+    },
+    "logo": {
+      "minCapHeight": {
+        "$type": "dimension",
+        "$value": "24px",
+        "$description": "Minimum on screen. Enforced by the composition layer, not left to judgement.",
+        "$extensions": {
+          "md.brandkit": {
+            "order": 35,
+            "group": "logo",
+            "inputType": "dim",
+            "unit": "px",
+            "tags": ["composition"]
+          }
+        }
+      }
+    },
+    "icon": {
+      "grid": {
+        "$type": "dimension",
+        "$value": "24px",
+        "$extensions": {
+          "md.brandkit": { "order": 36, "group": "icon", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "stroke": {
+        "$type": "dimension",
+        "$value": "1.5px",
+        "$extensions": {
+          "md.brandkit": { "order": 37, "group": "icon", "inputType": "dim", "unit": "px" }
+        }
+      }
+    }
+  },
+  "border": {
+    "radius": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "4px",
+        "$extensions": {
+          "md.brandkit": { "order": 38, "group": "radius", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "8px",
+        "$extensions": {
+          "md.brandkit": { "order": 39, "group": "radius", "inputType": "dim", "unit": "px" }
+        }
+      }
+    },
+    "width": {
+      "hairline": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$extensions": {
+          "md.brandkit": { "order": 40, "group": "width", "inputType": "dim", "unit": "px" }
+        }
+      }
+    }
+  },
+  "shadow": {
+    "raised": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": 0,
+        "offsetY": 2,
+        "blur": 8,
+        "spread": 0,
+        "alpha": 12
+      },
+      "$description": "The only elevation. Depth is not a brand signal here.",
+      "$extensions": {
+        "md.brandkit": { "order": 41, "group": "elevation", "inputType": "shadow" }
+      }
+    }
+  },
+  "opacity": {
+    "muted": {
+      "$type": "number",
+      "$value": 0.64,
+      "$description": "Secondary copy on inverse surfaces.",
+      "$extensions": {
+        "md.brandkit": { "order": 42, "group": "state", "inputType": "pct" }
+      }
+    }
+  }
+}

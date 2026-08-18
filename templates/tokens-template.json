@@ -1,0 +1,211 @@
+{
+  "$description": "Design token starter — DTCG (W3C Design Tokens) with the md.brandkit profile. Replace the values, keep the shape. Delete the segments registry if the brand has no sub-brands or variants; delete a token's $extensions.segments map to make that value shared. `order` is required for stable presentation (see SPEC.md §9.2).",
+  "$extensions": {
+    "md.brandkit": {
+      "segments": [{ "id": "default", "label": "Default" }],
+      "tags": ["screen", "print", "composition"]
+    }
+  },
+  "color": {
+    "brand": {
+      "primary": {
+        "$type": "color",
+        "$value": "#000000",
+        "$description": "Carries the page.",
+        "$extensions": {
+          "md.brandkit": { "order": 0, "group": "brand", "inputType": "color" }
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "#000000",
+        "$description": "One action or state per view.",
+        "$extensions": {
+          "md.brandkit": { "order": 1, "group": "brand", "inputType": "color" }
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": "#000000",
+        "$description": "Body copy on light surfaces.",
+        "$extensions": {
+          "md.brandkit": { "order": 2, "group": "brand", "inputType": "color" }
+        }
+      }
+    },
+    "neutral": {
+      "0": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$extensions": {
+          "md.brandkit": { "order": 3, "group": "neutral", "inputType": "color" }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#808080",
+        "$extensions": {
+          "md.brandkit": { "order": 4, "group": "neutral", "inputType": "color" }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#111111",
+        "$extensions": {
+          "md.brandkit": { "order": 5, "group": "neutral", "inputType": "color" }
+        }
+      }
+    },
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "{color.neutral.0}",
+        "$description": "A reference, not a copy — the page ground follows the neutral ramp.",
+        "$extensions": {
+          "md.brandkit": { "order": 6, "group": "surface", "inputType": "color" }
+        }
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": {
+        "$type": "fontFamily",
+        "$value": ["<Brand Typeface>", "sans-serif"],
+        "$description": "First non-generic entry is the brand typeface. A static cut (TTF/OTF) must exist for deterministic composition.",
+        "$extensions": {
+          "md.brandkit": { "order": 7, "group": "fontFamily", "inputType": "font" }
+        }
+      },
+      "body": {
+        "$type": "fontFamily",
+        "$value": ["<Brand Typeface>", "sans-serif"],
+        "$extensions": {
+          "md.brandkit": { "order": 8, "group": "fontFamily", "inputType": "font" }
+        }
+      }
+    },
+    "fontSize": {
+      "base": {
+        "$type": "dimension",
+        "$value": "16px",
+        "$extensions": {
+          "md.brandkit": { "order": 9, "group": "fontSize", "inputType": "dim", "unit": "px" }
+        }
+      },
+      "display": {
+        "$type": "dimension",
+        "$value": "48px",
+        "$extensions": {
+          "md.brandkit": { "order": 10, "group": "fontSize", "inputType": "dim", "unit": "px" }
+        }
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "$type": "fontWeight",
+        "$value": 400,
+        "$extensions": {
+          "md.brandkit": { "order": 11, "group": "fontWeight", "inputType": "weight" }
+        }
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": 600,
+        "$description": "Headline weight. Composition loads exactly this cut.",
+        "$extensions": {
+          "md.brandkit": { "order": 12, "group": "fontWeight", "inputType": "weight" }
+        }
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "$type": "number",
+        "$value": 1.1,
+        "$extensions": {
+          "md.brandkit": { "order": 13, "group": "lineHeight", "inputType": "ratio" }
+        }
+      },
+      "body": {
+        "$type": "number",
+        "$value": 1.5,
+        "$extensions": {
+          "md.brandkit": { "order": 14, "group": "lineHeight", "inputType": "ratio" }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "sm": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$extensions": {
+        "md.brandkit": { "order": 15, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "md.brandkit": { "order": 16, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$extensions": {
+        "md.brandkit": { "order": 17, "group": "scale", "inputType": "dim", "unit": "px" }
+      }
+    }
+  },
+  "size": {
+    "container": {
+      "max": {
+        "$type": "dimension",
+        "$value": "1200px",
+        "$extensions": {
+          "md.brandkit": { "order": 18, "group": "container", "inputType": "dim", "unit": "px" }
+        }
+      }
+    },
+    "logo": {
+      "minCapHeight": {
+        "$type": "dimension",
+        "$value": "24px",
+        "$description": "Minimum on screen. Enforced by composition, not left to judgement.",
+        "$extensions": {
+          "md.brandkit": { "order": 19, "group": "logo", "inputType": "dim", "unit": "px", "tags": ["composition"] }
+        }
+      }
+    }
+  },
+  "border": {
+    "radius": {
+      "md": {
+        "$type": "dimension",
+        "$value": "8px",
+        "$extensions": {
+          "md.brandkit": { "order": 20, "group": "radius", "inputType": "dim", "unit": "px" }
+        }
+      }
+    }
+  },
+  "shadow": {
+    "raised": {
+      "$type": "shadow",
+      "$value": { "offsetX": 0, "offsetY": 2, "blur": 8, "spread": 0, "alpha": 12 },
+      "$extensions": {
+        "md.brandkit": { "order": 21, "group": "elevation", "inputType": "shadow" }
+      }
+    }
+  },
+  "opacity": {
+    "muted": {
+      "$type": "number",
+      "$value": 0.64,
+      "$extensions": {
+        "md.brandkit": { "order": 22, "group": "state", "inputType": "pct" }
+      }
+    }
+  }
+}

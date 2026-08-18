@@ -1,0 +1,562 @@
+{
+  "$schema": "https://brandkit.md/schema/brandkit-v0.2-draft.schema.json",
+  "$comment": "Reference profile for a fictional brand. HELION SYSTEMS does not exist; every fact, claim and certification here is invented for illustration. Note product `hel-gateway`: an unverified certification that must not be claimed, plus `isPlaceholder: true` — this is how the standard keeps unproven facts out of generated content.",
+  "schemaVersion": "0.2.0-draft",
+  "metadata": {
+    "brandId": "helion-systems",
+    "organizationId": "helion",
+    "name": "HELION SYSTEMS",
+    "version": "3.1.0",
+    "status": "approved",
+    "defaultLocale": "en-US",
+    "supportedLocales": ["en-US", "de-DE"],
+    "createdAt": "2026-01-12T09:00:00.000Z",
+    "updatedAt": "2026-03-02T14:20:00.000Z",
+    "effectiveFrom": "2026-03-05T00:00:00.000Z",
+    "reviewDueAt": "2026-09-01T00:00:00.000Z",
+    "owner": "Brand & Communications",
+    "approvedBy": "CMO",
+    "supersedesVersion": "3.0.0"
+  },
+  "identity": {
+    "mission": "Make secure infrastructure the default, not the upgrade.",
+    "vision": "Every team ships on infrastructure that is safe by construction, whether or not anyone on that team is a security engineer.",
+    "purpose": "Security work is unevenly distributed. We move it into the platform, where it only has to be solved once.",
+    "values": [
+      {
+        "name": "Verifiable over reassuring",
+        "description": "Every claim we make can be checked by the reader. If it cannot be checked, we do not make it."
+      },
+      {
+        "name": "Boring on purpose",
+        "description": "Infrastructure earns trust by being predictable. We prefer the unremarkable answer that holds under load."
+      },
+      {
+        "name": "Plain language",
+        "description": "We explain what a system does before we explain why it matters. No mystique, no acronym walls."
+      }
+    ],
+    "story": "HELION started as an internal platform team that got tired of writing the same hardening checklist for the fourth product in a row. The checklist became a gateway, the gateway became a product, and the habit of writing things down became the brand.",
+    "tagline": "Secure by construction."
+  },
+  "positioning": {
+    "statement": "HELION SYSTEMS is the secure infrastructure layer for engineering teams who need to prove their controls, not just describe them.",
+    "category": "Infrastructure security platform",
+    "differentiators": [
+      "Controls ship as code and produce machine-readable evidence, so an audit is a query and not a project.",
+      "Runs in the customer's own network boundary — no data leaves the perimeter to be inspected.",
+      "Defaults are the secure path; the insecure path requires an explicit, logged override."
+    ],
+    "proofPoints": [
+      "Median rollout to first enforced policy: 9 days across 40 documented deployments.",
+      "Every control emits a signed evidence record, retained for the customer's full audit window.",
+      "Open control library — the policy definitions are readable before purchase."
+    ],
+    "competitiveContext": "Adjacent tools either scan after the fact or wrap existing infrastructure in dashboards. HELION sits in the request path and enforces, which is why enforcement latency is a first-class number in our material."
+  },
+  "audiences": [
+    {
+      "id": "platform-eng",
+      "name": "Platform engineers",
+      "description": "Own the internal developer platform. Evaluate HELION technically before anyone else sees it, and will read the docs before the landing page.",
+      "needs": [
+        "Concrete latency and failure-mode numbers",
+        "A migration path that does not require a freeze window",
+        "Configuration as code, reviewable in a pull request"
+      ],
+      "painPoints": [
+        "Security requirements arrive as PDFs, not as interfaces",
+        "Every audit cycle re-derives evidence by hand",
+        "Tools that add a dashboard but no enforcement"
+      ],
+      "toneAdjustments": "Lead with mechanism. Numbers before adjectives, and never explain what a reverse proxy is."
+    },
+    {
+      "id": "security-lead",
+      "name": "Security leads",
+      "description": "Accountable for controls and for what auditors see. Buy on evidence quality and on how failures behave.",
+      "needs": [
+        "Traceability from control to evidence record",
+        "Clear statement of what is enforced and what is only observed",
+        "Named standards, with the scope of each one"
+      ],
+      "painPoints": [
+        "Vendor claims that collapse under audit questioning",
+        "Coverage gaps discovered during, not before, review"
+      ],
+      "toneAdjustments": "Be precise about scope. State the limits of a control in the same breath as its benefit."
+    },
+    {
+      "id": "eng-leadership",
+      "name": "Engineering leadership",
+      "description": "Approves the spend. Cares about delivery speed staying intact while risk goes down.",
+      "needs": [
+        "Rollout effort in team-weeks",
+        "What breaks and who gets paged",
+        "A defensible answer for the board"
+      ],
+      "painPoints": ["Security programs that quietly become delivery taxes"],
+      "toneAdjustments": "Short. Consequence first, mechanism on request."
+    }
+  ],
+  "messaging": {
+    "coreMessage": "Controls that enforce themselves and prove it.",
+    "elevatorPitch": "HELION SYSTEMS puts your security controls in the request path instead of in a document. Policies ship as code, run inside your own network boundary, and emit signed evidence for every decision — so proving a control works is a query, not a quarter.",
+    "keyMessages": [
+      {
+        "id": "km-enforced",
+        "message": "A control that is documented but not enforced is a description of intent. HELION enforces in the request path.",
+        "audienceIds": ["platform-eng", "security-lead"],
+        "proofPoints": [
+          "Every control emits a signed evidence record, retained for the customer's full audit window."
+        ]
+      },
+      {
+        "id": "km-evidence",
+        "message": "Audit evidence is generated as a side effect of running, not assembled before a review.",
+        "audienceIds": ["security-lead", "eng-leadership"]
+      },
+      {
+        "id": "km-speed",
+        "message": "Secure defaults do not slow delivery down; they remove the decision from every pull request.",
+        "audienceIds": ["eng-leadership", "platform-eng"],
+        "proofPoints": [
+          "Median rollout to first enforced policy: 9 days across 40 documented deployments."
+        ]
+      }
+    ],
+    "boilerplates": {
+      "short": "HELION SYSTEMS is the secure infrastructure layer for teams who have to prove their controls.",
+      "medium": "HELION SYSTEMS provides infrastructure security controls that run in the request path inside the customer's own network boundary. Policies are defined as code, enforced by default, and produce signed evidence records for audit.",
+      "long": "HELION SYSTEMS provides infrastructure security controls that run in the request path inside the customer's own network boundary. Policies are defined as code and reviewed like code, secure defaults apply without configuration, and every enforcement decision produces a signed evidence record retained for the customer's full audit window. Engineering teams keep their delivery speed; security leads get traceability from control to evidence without a manual collection cycle."
+    }
+  },
+  "voice": {
+    "toneAttributes": ["precise", "calm", "concrete", "unhurried", "respectful of expertise"],
+    "principles": [
+      {
+        "name": "Mechanism before benefit",
+        "description": "Say what the system does, then what that gets the reader. A benefit without a mechanism reads as marketing to this audience.",
+        "do": [
+          "Open with the observable behaviour: what is enforced, where, and at what cost.",
+          "Give the number and the sample size together."
+        ],
+        "dont": [
+          "Open with an outcome adjective (\"effortless\", \"seamless\", \"bulletproof\").",
+          "Cite a metric without saying what it was measured over."
+        ]
+      },
+      {
+        "name": "Name the limits",
+        "description": "Trust in security communication comes from stated boundaries. A control described without its scope will be tested against a scope we never claimed.",
+        "do": [
+          "State what a control does not cover, in the same paragraph.",
+          "Distinguish enforced from observed, every time."
+        ],
+        "dont": [
+          "Use \"complete\", \"total\" or \"end-to-end\" as a coverage claim.",
+          "Let a scoped certification imply the whole product."
+        ]
+      },
+      {
+        "name": "Plain sentences",
+        "description": "Our readers are experts in their own domain, not in ours. Expertise is respected by clarity, not by vocabulary.",
+        "do": [
+          "One idea per sentence.",
+          "Expand an acronym on first use, then use it."
+        ],
+        "dont": [
+          "Stack three nouns into a compound (\"security posture optimisation layer\").",
+          "Write in the passive to avoid naming who acts."
+        ]
+      }
+    ],
+    "vocabulary": {
+      "preferred": [
+        "enforce",
+        "evidence record",
+        "control",
+        "network boundary",
+        "override",
+        "scope"
+      ],
+      "avoid": [
+        "bulletproof",
+        "military-grade",
+        "unhackable",
+        "AI-powered",
+        "next-generation",
+        "revolutionise",
+        "leverage",
+        "synergy"
+      ]
+    }
+  },
+  "visualLanguage": {
+    "logo": {
+      "usage": "The wordmark is the primary mark and is always placed from an original vector file. On dark surfaces use the light cut; never recolour the wordmark to a segment accent.",
+      "clearspace": "Minimum clearspace on all sides equals the cap height of the wordmark.",
+      "minSize": "24px cap height on screen, 8mm in print.",
+      "misuse": [
+        "Recolouring, gradients, outlines or drop shadows on the wordmark",
+        "Stretching, rotating or re-spacing the letterforms",
+        "Placing the mark over photographic detail instead of a flat area",
+        "Re-drawing or re-typing the wordmark instead of using the source file"
+      ]
+    },
+    "colorPrinciples": "One brand colour carries the page; the accent marks a single action or state per view. Large areas stay in the neutral ramp — surfaces are calm so that a warning colour still means something.",
+    "typographyPrinciples": "One geometric sans across headings and body, differentiated by weight and size rather than by a second family. Headlines set tight (1.1), body generous (1.6).",
+    "layoutPrinciples": "12-column grid, wide gutters, generous outer margin. Content sits left-aligned in a measure of 60–75 characters; centred text is reserved for single-line statements.",
+    "iconographyStyle": "Line icons on a 24px grid, 1.5px stroke, square terminals, no fills and no rounded cartoon forms.",
+    "designTokenSetRef": "helion-systems.tokens.json"
+  },
+  "imagery": {
+    "style": "Documentary photography of real infrastructure and the people who operate it. Available light, no staged smiles, no glossy server-room stock.",
+    "subjects": [
+      "Operators at real workstations, mid-task",
+      "Physical infrastructure at honest scale — racks, cable trays, cooling",
+      "Close details that reward a second look: a labelled port, a hand on a console"
+    ],
+    "moods": ["composed", "unhurried", "matter-of-fact"],
+    "composition": "Full-bleed photography with a single clear subject and an intentionally quiet area where composed text can sit. Horizon and rack lines stay level.",
+    "lighting": "Existing light, including mixed colour temperatures. Contrast is allowed to be high; shadow detail may fall away.",
+    "colorGrading": "Neutral to slightly cool. No teal-orange grade, no heavy vignette, no synthetic glow.",
+    "avoid": [
+      "Glowing blue padlocks, shields, hooded figures or binary rain",
+      "Screens showing invented dashboards or fake log output",
+      "Text, logos or wordmarks rendered inside the photograph",
+      "Depicting people working without the safety equipment their real environment requires"
+    ],
+    "referenceAssetIds": ["asset-ops-console-01", "asset-rack-detail-04"]
+  },
+  "products": [
+    {
+      "id": "hel-mesh",
+      "name": "HELION Mesh",
+      "slug": "mesh",
+      "shortDescription": "Service-to-service identity and policy enforcement inside the customer's network boundary.",
+      "approvedClaims": [
+        "Enforces mutual authentication between services without changes to application code.",
+        "Emits a signed evidence record for every allow and deny decision."
+      ],
+      "forbiddenClaims": [
+        "Prevents all lateral movement",
+        "Replaces network segmentation"
+      ],
+      "safetyNotes": [
+        "Fail-closed is the default; describing a fail-open configuration requires an explicit note that it is an override."
+      ],
+      "assetIds": ["asset-mesh-diagram-02"],
+      "markets": ["eu", "uk"],
+      "languages": ["en-US", "de-DE"],
+      "certifications": [
+        {
+          "norm": "ISO/IEC 27001:2022",
+          "scope": "Operation of the HELION Mesh control plane",
+          "source": "Certificate HEL-27001-2026, valid to 2029-02-28",
+          "verified": true
+        }
+      ],
+      "isPlaceholder": false
+    },
+    {
+      "id": "hel-gateway",
+      "name": "HELION Gateway",
+      "slug": "gateway",
+      "shortDescription": "Edge policy enforcement point for north-south traffic. Early access.",
+      "approvedClaims": [
+        "Available in early access with a documented feature boundary."
+      ],
+      "forbiddenClaims": [
+        "Generally available",
+        "Certified to any standard",
+        "Drop-in replacement for an existing edge proxy"
+      ],
+      "safetyNotes": [
+        "Early access: no production support commitment. Any material must say so on first mention."
+      ],
+      "assetIds": [],
+      "markets": ["eu"],
+      "languages": ["en-US"],
+      "certifications": [
+        {
+          "norm": "SOC 2 Type II",
+          "scope": "Gateway data plane",
+          "source": "Audit scheduled, report not yet issued",
+          "verified": false
+        }
+      ],
+      "isPlaceholder": true
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-evidence",
+      "text": "Every enforcement decision produces a signed evidence record.",
+      "status": "approved",
+      "markets": ["eu", "uk", "us"]
+    },
+    {
+      "id": "claim-rollout",
+      "text": "Median 9 days to first enforced policy.",
+      "status": "restricted",
+      "conditions": "Only with the sample size named (40 documented deployments) and only for Mesh, not Gateway.",
+      "markets": ["eu", "uk"]
+    },
+    {
+      "id": "claim-perimeter",
+      "text": "Runs inside your own network boundary; no inspected data leaves the perimeter.",
+      "status": "approved",
+      "markets": ["eu", "uk", "us"]
+    },
+    {
+      "id": "claim-unbreachable",
+      "text": "Makes your infrastructure unbreachable.",
+      "status": "forbidden",
+      "markets": []
+    },
+    {
+      "id": "claim-compliant",
+      "text": "Makes you compliant with NIS2.",
+      "status": "forbidden",
+      "conditions": "Compliance is a property of the customer's organisation, never of a purchased product. Supporting a control is not the same as conferring compliance.",
+      "markets": []
+    }
+  ],
+  "policies": [
+    {
+      "id": "pol-no-unverified-norms",
+      "title": "No unverified standards in content",
+      "description": "A standard, norm or certification may only appear in generated content when the corresponding product certification carries verified = true. Unverified entries exist to be excluded, never to be paraphrased into an implication.",
+      "category": "legal",
+      "severity": "critical",
+      "scopes": [{ "type": "global" }],
+      "evaluationMethod": "hybrid",
+      "humanReviewRequired": true,
+      "enabled": true
+    },
+    {
+      "id": "pol-no-invented-facts",
+      "title": "No invented product facts",
+      "description": "Product capabilities, numbers, deployment counts and latencies come from approvedClaims or proofPoints. If a needed fact is absent, the output says so instead of supplying a plausible value.",
+      "category": "product",
+      "severity": "critical",
+      "scopes": [{ "type": "global" }],
+      "evaluationMethod": "language-model",
+      "humanReviewRequired": true,
+      "enabled": true
+    },
+    {
+      "id": "pol-logo-source-file",
+      "title": "Logo only from original files",
+      "description": "The wordmark is placed from an original vector asset. It is never drawn, re-typed, generated or reconstructed by a model, and never rendered as part of a generated image.",
+      "category": "visual",
+      "severity": "critical",
+      "scopes": [{ "type": "global" }],
+      "evaluationMethod": "deterministic",
+      "humanReviewRequired": false,
+      "enabled": true
+    },
+    {
+      "id": "pol-no-text-in-image",
+      "title": "No text inside generated imagery",
+      "description": "Generated photography contains no headlines, wordmarks, labels or readable interface text — including lettering printed on objects inside the scene. Headlines and marks are composed deterministically after generation.",
+      "category": "visual",
+      "severity": "error",
+      "scopes": [{ "type": "global" }],
+      "evaluationMethod": "multimodal-model",
+      "humanReviewRequired": false,
+      "enabled": true
+    },
+    {
+      "id": "pol-ppe-complete",
+      "title": "Protective equipment shown complete",
+      "description": "Where people appear in a working environment that requires protective equipment, that equipment is shown correctly and completely. Partial protection reads as an endorsement of unsafe practice.",
+      "category": "safety",
+      "severity": "critical",
+      "scopes": [{ "type": "global" }],
+      "evaluationMethod": "multimodal-model",
+      "humanReviewRequired": true,
+      "enabled": true
+    },
+    {
+      "id": "pol-early-access-labelled",
+      "title": "Early access labelled on first mention",
+      "description": "HELION Gateway is named as early access at its first mention in any artefact, with no production support commitment implied.",
+      "category": "product",
+      "severity": "error",
+      "scopes": [{ "type": "product", "value": "hel-gateway" }],
+      "evaluationMethod": "deterministic",
+      "humanReviewRequired": false,
+      "enabled": true
+    },
+    {
+      "id": "pol-no-fear-appeals",
+      "title": "No fear appeals",
+      "description": "We do not sell through breach imagery, countdown framing or implied blame. The reader's risk is described in operational terms.",
+      "category": "messaging",
+      "severity": "warning",
+      "scopes": [{ "type": "global" }],
+      "evaluationMethod": "language-model",
+      "humanReviewRequired": false,
+      "enabled": true
+    },
+    {
+      "id": "pol-linkedin-length",
+      "title": "LinkedIn posts stay under 1300 characters",
+      "description": "Posts fit without the platform's truncation, and lead with the mechanism inside the first two lines.",
+      "category": "channel",
+      "severity": "info",
+      "scopes": [{ "type": "channel", "value": "linkedin" }],
+      "evaluationMethod": "deterministic",
+      "humanReviewRequired": false,
+      "enabled": true
+    },
+    {
+      "id": "pol-de-formal-address",
+      "title": "German-language content uses formal address",
+      "description": "German artefacts address the reader with \"Sie\". Technical documentation may drop direct address entirely, but never switches to \"du\".",
+      "category": "voice",
+      "severity": "warning",
+      "scopes": [{ "type": "market", "value": "dach" }],
+      "evaluationMethod": "language-model",
+      "humanReviewRequired": false,
+      "enabled": true
+    },
+    {
+      "id": "pol-legacy-tagline",
+      "title": "Retired tagline \"Trust the Layer\"",
+      "description": "Superseded in version 3.0.0. Kept here so tooling recognises and rejects it rather than treating it as valid brand language.",
+      "category": "messaging",
+      "severity": "warning",
+      "scopes": [{ "type": "global" }],
+      "evaluationMethod": "deterministic",
+      "humanReviewRequired": false,
+      "enabled": false
+    }
+  ],
+  "channels": [
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "type": "social",
+      "formatNotes": "Single image at 1080×1080 with the headline composed, not generated. Post text under 1300 characters, no hashtag stacks.",
+      "toneAdjustments": "One idea per post. The first two lines carry the mechanism; the rest may elaborate.",
+      "constraints": [
+        "No more than three hashtags",
+        "No emoji in the first line",
+        "Never imply that a product is generally available when it is in early access"
+      ]
+    },
+    {
+      "id": "docs",
+      "name": "Product documentation",
+      "type": "documentation",
+      "formatNotes": "Task-oriented headings in the imperative. Every configuration example is runnable as written.",
+      "toneAdjustments": "Instructional and direct. No positioning language, no benefit framing.",
+      "constraints": [
+        "No marketing claims inside reference pages",
+        "Every example includes its failure behaviour"
+      ]
+    },
+    {
+      "id": "newsletter",
+      "name": "Practitioner newsletter",
+      "type": "email",
+      "formatNotes": "One subject, one call to action. Plain-text readable — the layout may not carry meaning the text lacks.",
+      "toneAdjustments": "Write to a peer who has read the last issue. Recap in one sentence, then continue.",
+      "constraints": ["Subject line under 60 characters"]
+    }
+  ],
+  "markets": [
+    {
+      "id": "dach",
+      "name": "Germany, Austria, Switzerland",
+      "locales": ["de-DE", "de-AT", "de-CH"],
+      "legalNotes": "Comparative advertising is permitted but must be factually verifiable; naming a competitor requires legal review.",
+      "culturalNotes": "Formal address throughout. Certifications and named standards carry more weight than customer logos."
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "locales": ["en-GB"],
+      "culturalNotes": "British spelling. Understatement reads as confidence; superlatives read as noise."
+    },
+    {
+      "id": "us",
+      "name": "United States",
+      "locales": ["en-US"],
+      "legalNotes": "Avoid absolute security claims entirely — they carry liability exposure beyond the brand question.",
+      "culturalNotes": "Outcome-first framing is acceptable, provided the mechanism follows in the same paragraph."
+    }
+  ],
+  "aiInstructions": {
+    "systemGuidelines": "You are writing as HELION SYSTEMS. Ground every factual statement in this brandkit: approved claims, proof points and verified certifications are the only permitted sources of fact. Prefer mechanism over benefit, name the scope of every control, and state limits explicitly. When a required fact is missing, say that it is missing — never supply a plausible substitute.",
+    "allowedContexts": [
+      "Product and platform documentation",
+      "Practitioner-facing blog posts and newsletters",
+      "LinkedIn and conference material",
+      "Sales collateral built from approved claims",
+      "Internal enablement and onboarding material"
+    ],
+    "restrictedContexts": [
+      "Regulatory filings and contractual language",
+      "Incident communication and breach notification",
+      "Statements about named competitors",
+      "Pricing, contractual terms and service level commitments",
+      "Any content asserting customer compliance status"
+    ],
+    "fallbackBehavior": "If the brandkit does not cover the case, produce the most conservative version that stays inside approved claims, mark the uncertain passage inline, and route the artefact to human review instead of guessing.",
+    "imageGenerationRules": [
+      "Generate the photograph only — no text, no wordmark, no logo, no interface screenshots.",
+      "No lettering on objects inside the scene: no printed labels, embossed codes or standard markings.",
+      "Full bleed: no frames, borders, colour panels or layout areas inside the image.",
+      "Use only the brand palette for any graphic area, tint or accent; photographic subjects keep their natural colours.",
+      "Show protective equipment complete wherever the environment requires it."
+    ],
+    "textGenerationRules": [
+      "Lead with the mechanism; the benefit follows in the same paragraph.",
+      "Every number appears with what it was measured over.",
+      "Never name a standard whose certification is not verified.",
+      "Label HELION Gateway as early access on first mention.",
+      "Do not use the avoid-vocabulary, and do not reach for a synonym of it either."
+    ]
+  },
+  "governance": {
+    "owner": "Brand & Communications",
+    "reviewCycle": "Every six months, and on any change to a product certification.",
+    "approvalPolicy": "Approved versions are immutable. A change starts a new draft version with supersedesVersion set, and requires sign-off from brand and from legal when claims, policies or certifications are touched.",
+    "changePolicy": "Policies and claims may only be edited in a draft version. Retired messaging stays in the file with enabled = false so tooling keeps rejecting it.",
+    "contact": "brand@helion.example"
+  },
+  "references": [
+    {
+      "id": "ref-guidelines",
+      "title": "HELION Brand Guidelines (full visual system)",
+      "type": "guideline",
+      "url": "https://brand.helion.example/guidelines",
+      "description": "Print specifications, motion, exhibition and merchandise — everything outside the scope of this brandkit."
+    },
+    {
+      "id": "ref-tokens",
+      "title": "HELION Design Tokens (DTCG)",
+      "type": "document",
+      "url": "https://brand.helion.example/tokens/helion-systems.tokens.json",
+      "description": "Canonical token set referenced by visualLanguage.designTokenSetRef."
+    },
+    {
+      "id": "ref-claims-register",
+      "title": "Claims register and evidence sources",
+      "type": "document",
+      "url": "https://brand.helion.example/claims",
+      "description": "Source documents behind every approved claim and verified certification."
+    },
+    {
+      "id": "ref-wordmark",
+      "title": "Wordmark, original vector files",
+      "type": "asset",
+      "assetId": "asset-wordmark-master",
+      "description": "The only permitted source for the mark. See policy pol-logo-source-file."
+    }
+  ]
+}
